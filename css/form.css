@@ -7,6 +7,7 @@
 .form__fieldset {
     border: 3px solid cornflowerblue;
     border-radius: 30px;
+    background-color: hsla(0, 100%, 99%, 0.77);
 }
 
 .form__legend {
