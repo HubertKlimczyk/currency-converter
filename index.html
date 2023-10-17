@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator walut</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/container.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script defer src="js/script.js"></script>
+
+</head>
+
+<body class="container">
+    <form class="form js-form">
+        <fieldset class="form__fieldset">
+            <legend class="form__legend">Kalkulator Walut</legend>
+            <p class="form__paragraph">
+                <label for="inputValue">
+                    <span class="form__labelText">Kwota: *</span>
+                </label>
+                <input class="form__input js-amount" id="inputValue" name="Value in PLN" type="number" min="0.1"
+                    step="0.1" placeholder="Podaj Kwotę w PLN" required autofocus>
+            </p>
+            <p class="form__paragraph">
+                <label for="selectCurrency">
+                    <span class="form__labelText">Wybierz walutę:</span>
+                </label>
+                <select class="form__input js-currency" name="currency" id="selectCurrency">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                </select>
+            </p>
+            <p class="form__buttonContainer">
+                <button class="form__button">Oblicz</button>
+                <span class="form__result js-result"></span>
+            </P>
+            <p class="form__paragraph form__paragraph--comments">
+                Kursy walut z dnia: 26.09.2023r <br>* Pole wymagane
+            </p>
+        </fieldset>
+    </form>
+    <footer class="footer">Copyright Hubert</footer>
+</body>
+
+</html>

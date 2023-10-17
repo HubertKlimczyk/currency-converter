@@ -1,0 +1,7 @@
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+    background-color: hsla(240, 4%, 95%, 0.658);
+}
