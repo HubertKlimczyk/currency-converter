@@ -2,7 +2,7 @@
 
 [link to website](https://hubertklimczyk.github.io/currency-converter/)
 
-![Screan of page](images/prtsc.png)
+![Screan of page](images/AnimationOfPage.gif)
 
 ## General info:
 This project of website was created for practising basic skills.
