@@ -1,40 +1,44 @@
-let amountElement = document.querySelector(".js-amount");
-let currencyElement = document.querySelector(".js-currency");
-let resultElement = document.querySelector(".js-result");
-let formElement = document.querySelector(".js-form");
+{
+    const calculateResult = (amount, currency) => {
+        const rateUSD = 4.36;
+        const rateEUR = 4.61;
+        const rateGBP = 5.30;
+        
+        switch (currency) {
+            case "USD":
+                return amount / rateUSD;
+            case "EUR":
+                return amount / rateEUR;
+            case "GBP":
+                return amount / rateGBP;
+        }
+    };
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
+    const updateResulttext = (amount, result, currency) => {
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerText = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
+    };
+   
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
-    let amount = +amountElement.value;
-    let currency = currencyElement.value;
-    let rateUSD = 4.36;
-    let rateEUR = 4.61;
-    let rateGBP = 5.30;
-    let result;
+        const amountElement = document.querySelector(".js-amount");
+        const currencyElement = document.querySelector(".js-currency");
 
-    // if (currency == "USD") {
-    //     result = amount / rateUSD;
-    // } else if (currency == "EUR") {
-    //     result = amount / rateEUR;
-    // } else {
-    //     result = amount / rateGBP
-    // }
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
 
-    // resultElement.innerText = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
+        const result = calculateResult(amount, currency);
 
-    switch (currency) {
-        case "USD":
-            result = amount / rateUSD;
-            break;
-        case "EUR":
-            result = amount / rateEUR;
-            break;
-        case "GBP":
-            result = amount / rateGBP;
-            break;
-    }
+        updateResulttext(amount, result, currency);
+    };
 
-    resultElement.innerText = `${amount} PLN = ${result.toFixed(2)} ${currency}`;
-});
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
 
+        formElement.addEventListener("submit", onFormSubmit);
+
+    };
+   
+    init();
+}
